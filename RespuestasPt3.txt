@@ -1,0 +1,53 @@
+a) ¿Por qué no se dibuja la relación de agregación entre la clase CollectionProducto y Producto?
+
+La relación de agregación no se dibuja porque la clase CollectionProducto mantiene una relación de asociación estática con Producto a través de una lista estática (public static List<Producto> productos). Al ser un atributo estático, pertenece a la clase en sí y no a las instancias, por lo que técnicamente no es una agregación tradicional donde los objetos contenidos son parte de una instancia específica del contenedor.
+
+b) ¿Cuántos atributos tiene la clase Factura? ¿Cuáles son los nombres de esos atributos?
+
+La clase Factura tiene 4 atributos:
+fecha (tipo LocalDate)
+nroFactura (tipo long)
+cliente (tipo Cliente)
+detalles (tipo List<Detalle>)
+
+c) ¿Cómo se llama la relación que se establece entre Factura y Detalle?
+
+La relación entre Factura y Detalle es una relación de composición, donde Factura es el todo y Detalle es la parte. Esto se evidencia porque los detalles son parte integral de la factura y no pueden existir sin ella, como se muestra en la lista detalles que es un atributo de Factura.
+
+
+d) ¿Cómo se llama la relación entre las clases Factura y Cliente?
+
+La relación entre Factura y Cliente es una asociación simple, donde Factura tiene una referencia a Cliente a través del atributo cliente. Es una relación de uso donde una factura está asociada a un cliente, pero el cliente puede existir independientemente de la factura.
+
+e) ¿Por qué los atributos de las clases Collections son públicos?
+
+Los atributos de las clases Collections son públicos (static) porque:
+1-Actúan como repositorios globales de datos que necesitan ser accesibles desde cualquier parte del programa
+2-Implementan un patrón de diseño similar a un Singleton donde los datos son compartidos por toda la aplicación
+3-Facilitan el acceso directo a las colecciones sin necesidad de instanciar las clases Collection
+4-Sirven como una forma simple de persistencia en memoria durante la ejecución del programa
+
+f) Describa las características de todos los métodos de la clase CollectionClientes:
+La clase CollectionCliente tiene tres métodos:
+
+precargarClientes()
+
+Es un método estático
+No recibe parámetros
+Se encarga de inicializar la lista con datos predeterminados
+Solo carga los datos si la lista está vacía
+Crea tres clientes con sus respectivos datos
+agregarCliente(Cliente cliente)
+
+Es un método estático
+Recibe un parámetro de tipo Cliente
+Utiliza manejo de excepciones (try-catch)
+Agrega un nuevo cliente a la lista
+Si falla, muestra un mensaje de error
+buscarCliente(long dni)
+
+Es un método estático
+Recibe un parámetro de tipo long (DNI)
+Retorna un objeto Cliente o null si no lo encuentra
+Utiliza manejo de excepciones (try-catch)
+Busca un cliente por su DNI en la lista de clientes

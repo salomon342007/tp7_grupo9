@@ -1,0 +1,15 @@
+ar\edu\unju\escmi\tp7\dominio\TarjetaCredito.class
+ar\edu\unju\escmi\tp7\collections\CollectionCliente.class
+ar\edu\unju\escmi\tp7\collections\CollectionTarjetaCredito.class
+ar\edu\unju\escmi\tp7\collections\CollectionProducto.class
+ar\edu\unju\escmi\tp7\main\Main.class
+ar\edu\unju\escmi\tp7\dominio\Credito.class
+ar\edu\unju\escmi\tp7\dominio\Producto.class
+ar\edu\unju\escmi\tp7\collections\CollectionFactura.class
+ar\edu\unju\escmi\tp7\dominio\Cuota.class
+ar\edu\unju\escmi\tp7\collections\CollectionCredito.class
+ar\edu\unju\escmi\tp7\dominio\Stock.class
+ar\edu\unju\escmi\tp7\collections\CollectionStock.class
+ar\edu\unju\escmi\tp7\dominio\Factura.class
+ar\edu\unju\escmi\tp7\dominio\Cliente.class
+ar\edu\unju\escmi\tp7\dominio\Detalle.class
