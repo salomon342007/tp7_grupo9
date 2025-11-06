@@ -1,16 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ar.edu.unju.escmi.tp7.tests.CreditoTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.051 s <<< FAILURE! -- in ar.edu.unju.escmi.tp7.tests.CreditoTest
-ar.edu.unju.escmi.tp7.tests.CreditoTest.testMontoCreditoValido -- Time elapsed: 0.029 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: El monto total no debería superar al monto permitido ==> expected: <true> but was: <false>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
-	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
-	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:214)
-	at ar.edu.unju.escmi.tp7.tests.CreditoTest.testMontoCreditoValido(CreditoTest.java:23)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.050 s -- in ar.edu.unju.escmi.tp7.tests.CreditoTest

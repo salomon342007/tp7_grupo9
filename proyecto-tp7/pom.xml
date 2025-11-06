@@ -6,11 +6,12 @@
   <name>proyecto-tp7</name>
   <description>desarrollo tp7</description>
   
-   <properties>
-	<maven.compiler.target>21</maven.compiler.target>
-	<maven.compiler.source>21</maven.compiler.source>
-	<encoding>UTF-8</encoding>
-  </properties>
+	<properties>
+		<maven.compiler.source>24</maven.compiler.source>
+		<maven.compiler.target>24</maven.compiler.target>
+		<maven.compiler.release>24</maven.compiler.release>
+		<encoding>UTF-8</encoding>
+	</properties>
   
   <dependencies>
 	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
@@ -21,5 +22,20 @@
 	    <scope>test</scope>
 	</dependency>
 
-  </dependencies>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.11.0</version>
+				<configuration>
+					<!-- Use release to pick the correct platform classes for the targeted Java version -->
+					<release>${maven.compiler.release}</release>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
