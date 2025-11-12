@@ -1,0 +1,71 @@
+
+Actividad 3 - Trabajo Práctico N.º 7 – Grupo 6
+a) ¿Por qué no se dibuja la relación de agregación entre la clase CollectionProducto y Producto?
+
+No se representa una relación de agregación entre CollectionProducto y Producto porque dicha conexión no corresponde a una relación conceptual entre objetos del dominio, sino a una estructura de almacenamiento.
+La clase CollectionProducto actúa como una clase utilitaria encargada de gestionar una lista de productos, no como una entidad que posea o dependa conceptualmente de ellos. El vínculo ya queda implícito en List<Producto>.
+
+b) ¿Cuántos atributos tiene la clase Factura? ¿Cuáles son los nombres de esos atributos?
+
+La clase Factura posee cinco atributos:
+
+contador: int
+
+fecha : LocalDate
+
+nroFactura : long
+
+cliente : Cliente
+
+detalles : List<Detalle>
+
+
+
+c) ¿Cómo se llama la relación que se establece entre Factura y Detalle?
+
+La relación entre Factura y Detalle es de composición.
+Cada factura está compuesta por uno o varios detalles, y estos no pueden existir independientemente de la factura a la que pertenecen. Si una factura se elimina, todos sus detalles asociados también se eliminan.
+
+d) ¿Cómo se llama la relación entre las clases Factura y Cliente?
+
+La relación entre Factura y Cliente es una asociación.
+Cada factura está asociada a un único cliente, mientras que un cliente puede estar vinculado a múltiples facturas. La multiplicidad correspondiente es 1 cliente → N facturas.
+
+e) ¿Por qué los atributos de las clases Collections son públicos?
+
+Los atributos de las clases Collections son públicos porque estas clases no representan entidades del dominio, sino estructuras de gestión de datos compartidos.
+Su función principal es permitir un acceso global y directo a las colecciones desde cualquier parte del sistema, facilitando la carga, búsqueda y manipulación de objetos sin necesidad de instanciar la clase.
+
+f) Describa las características de todos los métodos de la clase CollectionClientes.
+
+agregarCliente
+
+- Es un procedimiento (void)
+
+- Es público y estático
+
+- Recibe como parámetro un objeto de tipo Cliente
+
+- Su funcion es  agrega un nuevo cliente a la colección, siempre que no exista otro con el mismo DNI.
+
+Características adicionales: incluye validaciones y evita duplicados.
+
+buscarCliente
+
+Tipo: función (retorna un objeto Cliente o null)
+
+Modificador: público y estático
+
+Parámetro: un valor long correspondiente al DNI del cliente buscado
+
+Función: recorre la colección en busca del cliente cuyo DNI coincida con el recibido. Se utiliza, por ejemplo, al generar una factura o aprobar un crédito.
+
+precargarClientes
+
+Tipo: procedimiento (void)
+
+Modificador: público y estático
+
+Parámetros: ninguno
+
+Función: inicializa la colección cargando un conjunto de clientes predefinidos. Facilita las pruebas y el funcionamiento inicial del programa.
