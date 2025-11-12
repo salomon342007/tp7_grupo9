@@ -1,3 +1,4 @@
+
 Actividad 3 - Trabajo Práctico N.º 7 – Grupo 6
 a) ¿Por qué no se dibuja la relación de agregación entre la clase CollectionProducto y Producto?
 
@@ -68,4 +69,3 @@ Modificador: público y estático
 Parámetros: ninguno
 
 Función: inicializa la colección cargando un conjunto de clientes predefinidos. Facilita las pruebas y el funcionamiento inicial del programa.
-
