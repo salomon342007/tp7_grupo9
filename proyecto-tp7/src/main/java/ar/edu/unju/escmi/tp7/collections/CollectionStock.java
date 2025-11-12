@@ -13,31 +13,32 @@ public class CollectionStock {
 	public static void precargarStocks() {
 		if (stocks.isEmpty()) {
 			stocks = new ArrayList<Stock>();
-			stocks.add(new Stock(12, CollectionProducto.productos.get(0)));
-			stocks.add(new Stock(22, CollectionProducto.productos.get(1)));
-			stocks.add(new Stock(13, CollectionProducto.productos.get(2)));
-			stocks.add(new Stock(101, CollectionProducto.productos.get(3)));
-			stocks.add(new Stock(87, CollectionProducto.productos.get(4)));
-			stocks.add(new Stock(45, CollectionProducto.productos.get(5)));
-			stocks.add(new Stock(16, CollectionProducto.productos.get(6)));
-			stocks.add(new Stock(8, CollectionProducto.productos.get(7)));
-			stocks.add(new Stock(5, CollectionProducto.productos.get(8)));
-			stocks.add(new Stock(21, CollectionProducto.productos.get(9)));
-			stocks.add(new Stock(17, CollectionProducto.productos.get(10)));
-			stocks.add(new Stock(11, CollectionProducto.productos.get(11)));
-			stocks.add(new Stock(8, CollectionProducto.productos.get(12)));
-			stocks.add(new Stock(14, CollectionProducto.productos.get(13)));
-			stocks.add(new Stock(4, CollectionProducto.productos.get(14)));
-			stocks.add(new Stock(15, CollectionProducto.productos.get(15)));
-			stocks.add(new Stock(28, CollectionProducto.productos.get(16)));
-			stocks.add(new Stock(47, CollectionProducto.productos.get(17)));
-			stocks.add(new Stock(33, CollectionProducto.productos.get(18)));
-			stocks.add(new Stock(13, CollectionProducto.productos.get(19)));
+			List<Producto> productos = CollectionProducto.listarProductos();
+			stocks.add(new Stock(12, productos.get(0)));
+			stocks.add(new Stock(22, productos.get(1)));
+			stocks.add(new Stock(13, productos.get(2)));
+			stocks.add(new Stock(101, productos.get(3)));
+			stocks.add(new Stock(87, productos.get(4)));
+			stocks.add(new Stock(45, productos.get(5)));
+			stocks.add(new Stock(16, productos.get(6)));
+			stocks.add(new Stock(8, productos.get(7)));
+			stocks.add(new Stock(5, productos.get(8)));
+			stocks.add(new Stock(21, productos.get(9)));
+			stocks.add(new Stock(17, productos.get(10)));
+			stocks.add(new Stock(11, productos.get(11)));
+			stocks.add(new Stock(8, productos.get(12)));
+			stocks.add(new Stock(14, productos.get(13)));
+			stocks.add(new Stock(4, productos.get(14)));
+			stocks.add(new Stock(15, productos.get(15)));
+			stocks.add(new Stock(28, productos.get(16)));
+			stocks.add(new Stock(47, productos.get(17)));
+			stocks.add(new Stock(33, productos.get(18)));
+			stocks.add(new Stock(13, productos.get(19)));
 		}
 	}
 
 	public static void agregarStock(Stock stock) {
-		
+
 		try {
 			if (stocks.isEmpty()) {
 				stocks.add(stock);
@@ -62,7 +63,7 @@ public class CollectionStock {
 		} catch (Exception e) {
 			System.out.println("\nNO SE PUEDE GUARDAR EL STOCK");
 		}
-		
+
 	}
 
 	public static void reducirStock(Stock stock, int cantidad) {
@@ -79,7 +80,7 @@ public class CollectionStock {
 
 	public static Stock buscarStock(Producto producto) {
 		Stock stockTotal = null;
-		
+
 		try {
 			if (stocks != null) {
 				for (Stock sto : stocks) {
@@ -91,7 +92,7 @@ public class CollectionStock {
 		} catch (Exception e) {
 			return null;
 		}
-		
+
 		return stockTotal;
 	}
 }

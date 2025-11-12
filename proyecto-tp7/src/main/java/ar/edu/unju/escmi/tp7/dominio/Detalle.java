@@ -2,9 +2,10 @@ package ar.edu.unju.escmi.tp7.dominio;
 
 public class Detalle {
 
-	private int cantidad;
+    private int cantidad;
     private double importe;
     private Producto producto;
+    private boolean estadoAhora30;
 
     public Detalle() {
 
@@ -15,6 +16,14 @@ public class Detalle {
         this.importe = importe;
         this.producto = producto;
         calcularImporte();
+    }
+
+    public boolean isEstadoAhora30() {
+        return estadoAhora30;
+    }
+
+    public void setEstadoAhora30(boolean estadoAhora30) {
+        this.estadoAhora30 = estadoAhora30;
     }
 
     public int getCantidad() {
