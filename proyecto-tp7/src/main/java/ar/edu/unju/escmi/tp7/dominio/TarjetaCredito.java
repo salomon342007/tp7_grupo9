@@ -8,6 +8,7 @@ public class TarjetaCredito {
 	private LocalDate fechaCaducacion;
 	private Cliente cliente;
 	private double limiteCompra;
+	private double saldoDisponible;
 
 	public TarjetaCredito() {
 	}
@@ -18,6 +19,7 @@ public class TarjetaCredito {
 		this.fechaCaducacion = fechaCaducacion;
 		this.cliente = cliente;
 		this.limiteCompra = limiteCompra;
+		this.saldoDisponible = limiteCompra; // inicialmente todo el límite está disponible
 	}
 
 	public long getNumero() {
@@ -49,6 +51,12 @@ public class TarjetaCredito {
 	}
 
 	public double getLimiteCompra() {
+		// Mantener compatibilidad: getLimiteCompra devuelve el saldo disponible
+		// (comportamiento previo)
+		return saldoDisponible;
+	}
+
+	public double getLimiteTotal() {
 		return limiteCompra;
 	}
 
@@ -58,15 +66,28 @@ public class TarjetaCredito {
 	 * Si el monto es mayor al límite actual, no hace nada.
 	 */
 	public void disminuirLimite(double monto) {
-		if (monto <= this.limiteCompra) {
-			this.limiteCompra -= monto;
+		// decrementa saldoDisponible si hay suficiente
+		if (monto <= this.saldoDisponible) {
+			this.saldoDisponible -= monto;
 		}
+	}
+
+	public boolean tieneSaldoSuficiente(double monto) {
+		return this.saldoDisponible >= monto;
+	}
+
+	public boolean descontarMonto(double monto) {
+		if (tieneSaldoSuficiente(monto)) {
+			disminuirLimite(monto);
+			return true;
+		}
+		return false;
 	}
 
 	@Override
 	public String toString() {
 		return "\nNumero: " + numero + " Fecha De Caducacion: " + fechaCaducacion + "\nNombre Titular: "
-				+ cliente.getNombre() + ", Limite De Compra Actual:" + limiteCompra;
+				+ cliente.getNombre() + ", Limite Total:" + limiteCompra + ", Saldo Disponible:" + saldoDisponible;
 	}
 
 }
